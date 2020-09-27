@@ -7,8 +7,6 @@ public class Microwave : MonoBehaviour
 {
     [SerializeField]
     private Text microwaveTimerText;
-    [SerializeField]
-    private List<GameObject> digitsList = new List<GameObject>();
 
     private Player player;
     private string objectName;
@@ -19,14 +17,18 @@ public class Microwave : MonoBehaviour
     private float delayTime = 1.0f;
     private MicrowaveStartButton microwaveStart;
     private bool canStart;
+    private int layerNumber;
 
     private void Start()
     {
         microwaveTimerText.text = "EMPTY";
         player = FindObjectOfType<Player>();
         objectName = "";
+        selectedGameObject = null;
+        strDigits = "";
         microwaveStart = FindObjectOfType<MicrowaveStartButton>();
         canStart = false;
+        layerNumber = 0;
     }
 
     private void Update()
@@ -35,7 +37,12 @@ public class Microwave : MonoBehaviour
         objectName = player.GetSelectingObject();
         canStart = microwaveStart.GetCorrectTime();
 
-        if (selectedGameObject.layer == 11)
+        if (selectedGameObject != null)
+        {
+            layerNumber = selectedGameObject.layer;
+        }
+
+        if (layerNumber == 11)
         {
             if (Input.GetMouseButtonDown(0) && charDigitsList.Count < 4)
             {

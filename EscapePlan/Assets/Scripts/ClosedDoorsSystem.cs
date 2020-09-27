@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorsSystem : MonoBehaviour
+public class ClosedDoorsSystem : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject collectedItems;
+
     private Player player;
     private bool doorAction;
     private bool openning;
     private string objectName;
     private float distanceFromPlayer;
     private GameObject selectedGameObject;
-    private int layerNumber;
+    private Renderer doorRenderer;
+
+    private PlayerCollectsItems playerCollects;
+    private List<Renderer> renderersList = new List<Renderer>();
 
     private void Start()
     {
@@ -20,7 +26,9 @@ public class DoorsSystem : MonoBehaviour
         objectName = "";
         distanceFromPlayer = 0.0f;
         selectedGameObject = null;
-        layerNumber = 0;
+        doorRenderer = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>();
+
+        playerCollects = FindObjectOfType<PlayerCollectsItems>();
     }
 
     private void Update()
@@ -30,19 +38,30 @@ public class DoorsSystem : MonoBehaviour
         distanceFromPlayer = player.GetDistanceToObject();
         selectedGameObject = player.GetSelectingGameObject();
 
-        if (selectedGameObject != null)
-        {
-            layerNumber = selectedGameObject.layer;
-        }
+        renderersList = playerCollects.GetItemsRendererList();
 
-        if (Input.GetKeyDown(KeyCode.F) && objectName.Equals(childName) && (distanceFromPlayer < 2.2f))
+        if (objectName.Equals(childName) && Input.GetKeyDown(KeyCode.F))
         {
             doorAction = true;
         }
-
-        if (layerNumber != 13)
+        /*
+        if (renderersList.Count > 0)
         {
-            OpenCloseDoorSystem();
+            for (int i = 0; i < renderersList.Count; i++)
+            {
+                if (doorRenderer.material.color.Equals(renderersList[i].material.color) && (distanceFromPlayer < 2.2f))
+                {
+                    OpenCloseDoorSystem();
+                }
+            }
+        }
+        */
+        for (int i = 0; i < renderersList.Count; i++)
+        {
+            if (doorRenderer.material.color.Equals(renderersList[i].material.color) && (distanceFromPlayer < 2.2f))
+            {
+                OpenCloseDoorSystem();
+            }
         }
     }
 
@@ -77,5 +96,4 @@ public class DoorsSystem : MonoBehaviour
 
         }
     }
-
 }

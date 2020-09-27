@@ -18,7 +18,7 @@ public class RoomDoorSystem : MonoBehaviour
         doorsSystem = FindObjectOfType<DoorsSystem>();
         canOpen = false;
     }
-
+    /*
     private void Update()
     {
         if (canOpen)
@@ -26,7 +26,7 @@ public class RoomDoorSystem : MonoBehaviour
             doorsSystem.OpenCloseDoorSystem();
         }
     }
-
+    */
     private void OnTriggerEnter(Collider other)
     {
         if ((other.gameObject.layer == 10) && collectedItems.transform.Find("RoomKey"))
@@ -46,5 +46,10 @@ public class RoomDoorSystem : MonoBehaviour
         {
             informationText.text = "";
         }
+    }
+
+    public bool GetCanOpen()
+    {
+        return canOpen;
     }
 }

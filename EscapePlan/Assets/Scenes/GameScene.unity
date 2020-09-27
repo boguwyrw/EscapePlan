@@ -547,9 +547,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 129014430}
-  - component: {fileID: 129014431}
   - component: {fileID: 129014432}
   - component: {fileID: 129014433}
+  - component: {fileID: 129014431}
   m_Layer: 13
   m_Name: RoomDoorSystem
   m_TagString: Untagged
@@ -581,9 +581,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 129014429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6707d4b7b7568c948a53f52bfb4c3ead, type: 3}
+  m_Script: {fileID: 11500000, guid: 49489f3e0fa49964ea074f7280bdea40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectedItems: {fileID: 2068805814}
 --- !u!65 &129014432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2298,9 +2299,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 910992031}
-  - component: {fileID: 910992032}
   - component: {fileID: 910992033}
   - component: {fileID: 910992034}
+  - component: {fileID: 910992032}
   m_Layer: 13
   m_Name: KitchenDoorSystem
   m_TagString: Untagged
@@ -2332,9 +2333,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 910992030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6707d4b7b7568c948a53f52bfb4c3ead, type: 3}
+  m_Script: {fileID: 11500000, guid: 49489f3e0fa49964ea074f7280bdea40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectedItems: {fileID: 2068805814}
 --- !u!65 &910992033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4974,17 +4976,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   microwaveTimerText: {fileID: 1318229189}
-  digitsList:
-  - {fileID: 1746727536}
-  - {fileID: 1746727538}
-  - {fileID: 1746727540}
-  - {fileID: 1746727542}
-  - {fileID: 1746727544}
-  - {fileID: 1746727546}
-  - {fileID: 1746727548}
-  - {fileID: 1746727550}
-  - {fileID: 1746727520}
-  - {fileID: 1746727522}
 --- !u!1 &1746727450
 GameObject:
   m_ObjectHideFlags: 0
@@ -6784,6 +6775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: {fileID: 1106608761}
+  collectedItems: {fileID: 0}
 --- !u!64 &1760769151
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6821,9 +6813,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1816376640}
-  - component: {fileID: 1816376641}
   - component: {fileID: 1816376642}
   - component: {fileID: 1816376643}
+  - component: {fileID: 1816376641}
   m_Layer: 13
   m_Name: LivingRoomDoorSystem
   m_TagString: Untagged
@@ -6855,9 +6847,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1816376639}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6707d4b7b7568c948a53f52bfb4c3ead, type: 3}
+  m_Script: {fileID: 11500000, guid: 49489f3e0fa49964ea074f7280bdea40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectedItems: {fileID: 2068805814}
 --- !u!65 &1816376642
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6921,7 +6914,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &1853692011
 CapsuleCollider:

@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
-        playerRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         playerNormalSpeed = 4.0f;
         playerCrouchSpeed = 2.0f;
         playerSpeed = playerNormalSpeed;
