@@ -38,7 +38,6 @@ public class IceCube : MonoBehaviour
         if (transform.localScale.x < 0.021)
         {
             iceCubeAnimation.enabled = false;
-            Destroy(gameObject);
         }
     }
 }

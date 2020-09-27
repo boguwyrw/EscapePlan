@@ -10,29 +10,11 @@ public class LivingRoomDoorSystem : MonoBehaviour
     [SerializeField]
     private GameObject collectedItems;
 
-    private DoorsSystem doorsSystem;
-    private bool canOpen;
-
-    private void Start()
-    {
-        doorsSystem = FindObjectOfType<DoorsSystem>();
-        canOpen = false;
-    }
-
-    private void Update()
-    {
-        if (canOpen)
-        {
-            doorsSystem.OpenCloseDoorSystem();
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if ((other.gameObject.layer == 10) && collectedItems.transform.Find("LivingRoomKey"))
         {
             informationText.text = "Use Living Room Key to open door";
-            canOpen = true;
         }
         else
         {

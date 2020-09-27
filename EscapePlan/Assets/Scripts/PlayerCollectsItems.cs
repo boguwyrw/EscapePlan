@@ -26,9 +26,6 @@ public class PlayerCollectsItems : MonoBehaviour
         CollectingItems();
 
         PuttingAwayItems();
-
-        if (itemsRendererList.Count > 0)
-            Debug.Log(itemsRendererList[0].material.color);
     }
 
     private void CollectingItems()
