@@ -52,7 +52,7 @@ public class ChestBolt : MonoBehaviour
     {
         if ((other.gameObject.layer == 10) && collectedItems.transform.Find("WreckingBar"))
         {
-            informationText.text = "Use Wrecking Bar to open door";
+            informationText.text = "Use Wrecking Bar to open chest";
             canOpen = true;
         }
         else

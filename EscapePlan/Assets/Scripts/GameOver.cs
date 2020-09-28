@@ -8,20 +8,23 @@ public class GameOver : MonoBehaviour
     [SerializeField]
     private Text congratulationText;
     [SerializeField]
-    private Button quitButton;
+    private Text quitInfoText;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 10)
         {
             congratulationText.gameObject.SetActive(true);
-            quitButton.gameObject.SetActive(true);
+            quitInfoText.gameObject.SetActive(true);
             Time.timeScale = 0.0f;
         }
     }
 
-    public void QuitButton()
+    private void Update()
     {
-        Application.Quit();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
