@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WardrobeDoorsSystem : MonoBehaviour
 {
-
     private Player player;
     private string objectName;
     private float distanceFromPlayer;

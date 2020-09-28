@@ -32,21 +32,12 @@ public class FridgeDoorsSystem : MonoBehaviour
         }
 
         OpenCloseDoorSystem();
-        /*
-        if (Input.GetKey(KeyCode.F) && objectName.Equals(childName) && (distanceFromPlayer < 2.2f))
-        {
-            Quaternion openDoor = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-            transform.rotation = Quaternion.Slerp(transform.rotation, openDoor, 2 * Time.deltaTime);
-        }
-        */
     }
 
     private void OpenCloseDoorSystem()
     {
-
         if (doorAction)
         {
-
             if (transform.localEulerAngles.y < 0.25f)
             {
                 openning = true;
@@ -71,9 +62,6 @@ public class FridgeDoorsSystem : MonoBehaviour
                     doorAction = false;
                 }
             }
-
         }
-
     }
-
 }

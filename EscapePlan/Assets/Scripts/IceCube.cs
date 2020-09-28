@@ -32,7 +32,6 @@ public class IceCube : MonoBehaviour
                 transform.GetChild(0).parent = null;
             }
             iceCubeAnimation.enabled = true;
-            
         }
 
         if (transform.localScale.x < 0.021)

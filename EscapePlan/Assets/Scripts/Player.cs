@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     private Rigidbody playerRigidbody;
     private float playerNormalSpeed;
     private float playerCrouchSpeed;
